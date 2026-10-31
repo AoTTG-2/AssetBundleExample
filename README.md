@@ -8,7 +8,7 @@ Upgrading from the old (Unity 2023.1) version of this project? See [Upgrading fr
 
 ## Requirements
 
-- **Unity 6000.3.23f1**, installed through [Unity Hub](https://unity.com/download). Use this exact version: asset bundles built with a newer Unity than the game can't be loaded.
+- **Unity 6000.3.27f2**, installed through [Unity Hub](https://unity.com/download) (or with the Install button on its [release page](https://unity.com/releases/editor/whats-new/6000.3.27f2)). Use this exact version: asset bundles built with a newer Unity than the game can't be loaded.
 - In Unity Hub, add these modules to the editor for each platform you want to support:
   - **Mac Build Support**
   - **Linux Build Support**
@@ -21,7 +21,7 @@ Upgrading from the old (Unity 2023.1) version of this project? See [Upgrading fr
 ## Your first asset bundle
 
 1. Download this project: <https://github.com/AoTTG-2/AssetBundleExample>
-2. In Unity Hub, click **Add** and select the project folder, then open it with Unity 6000.3.23f1.
+2. In Unity Hub, click **Add** and select the project folder, then open it with Unity 6000.3.27f2.
 3. In the menu bar, click **Assets → Build AssetBundles** and choose a platform, for example **Windows**. You can also right-click the Assets folder in the Project window and use the same menu.
 
    Building can take a while, especially the first time, because every platform compiles its own shaders. Build only the platforms you're targeting. **All Platforms**, at the bottom of the menu, builds every platform in one go.
@@ -136,14 +136,14 @@ If a VideoPlayer streams from a URL, players are asked to confirm the URL before
 You can also build without opening the editor, for example in a script:
 
 ```bash
-"<path to Unity 6000.3.23f1>/Unity.exe" -batchmode -quit -projectPath "<path to this project>" -executeMethod AssetBundleBuilder.BuildAll
+"<path to Unity 6000.3.27f2>/Unity.exe" -batchmode -quit -projectPath "<path to this project>" -executeMethod AssetBundleBuilder.BuildAll
 ```
 
 To build a single platform, replace `BuildAll` with `BuildWindows`, `BuildMac`, `BuildLinux` or `BuildAndroid`. If a build fails, Unity exits with an error code.
 
 ## Upgrading from the old project
 
-AoTTG2 moved from Unity 2023.1 and the built-in render pipeline to **Unity 6000.3.23f1** with the **Universal Render Pipeline (URP)**. This section explains what that means for content you made with the old version of this project, and how to bring it over.
+AoTTG2 moved from Unity 2023.1 and the built-in render pipeline to **Unity 6000.3.27f2** with the **Universal Render Pipeline (URP)**. This section explains what that means for content you made with the old version of this project, and how to bring it over.
 
 ### Do I have to migrate?
 
@@ -165,9 +165,9 @@ Migrating gives you back the full look of your materials and lets you build for 
 
 ### Step by step
 
-#### 1. Install Unity 6000.3.23f1
+#### 1. Install Unity 6000.3.27f2
 
-Install **6000.3.23f1** through [Unity Hub](https://unity.com/download), and add **Mac Build Support**, **Linux Build Support** and **Android Build Support** for the platforms you want to support (see [Requirements](#requirements)).
+Install **6000.3.27f2** through [Unity Hub](https://unity.com/download), and add **Mac Build Support**, **Linux Build Support** and **Android Build Support** for the platforms you want to support (see [Requirements](#requirements)).
 
 #### 2. Back up your old project
 
@@ -180,7 +180,7 @@ Don't open your old project in Unity 6. The upgrade wouldn't set up URP to match
 1. Download the new project: <https://github.com/AoTTG-2/AssetBundleExample>
 2. Copy **your own folders** from the old project's `Assets` folder into the new project's `Assets` folder, together with their `.meta` files. The `.meta` files keep the links between your prefabs, materials and textures.
 3. Don't copy the old `ProjectSettings`, `Packages` or `Library` folders. The new project's settings match the game and must stay as they are.
-4. Open the new project in Unity 6000.3.23f1 and wait for the import to finish.
+4. Open the new project in Unity 6000.3.27f2 and wait for the import to finish.
 
 Your prefabs keep their **AssetBundle** names, so they still build into bundles with the same names.
 
